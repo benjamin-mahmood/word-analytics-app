@@ -5,11 +5,13 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 export default function Home() {
   return (
-    <main>
-      <ThemeToggle />
-      <Header />
-      <Main />
-      <Footer />
+    <main className='container flex justify-center'>
+      <div>
+        <ThemeToggle />
+        <Header />
+        <Main />
+        <Footer />
+      </div>
     </main>
   )
 }

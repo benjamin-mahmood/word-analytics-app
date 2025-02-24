@@ -1,3 +1,11 @@
+import Stats from './Stats'
+import TextArea from './TextArea'
+
 export default function Main() {
-  return <main>Main</main>
+  return (
+    <main>
+      <Stats />
+      <TextArea />
+    </main>
+  )
 }

@@ -11,7 +11,11 @@ const NextThemesProvider = dynamic(
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <HeroUIProvider>
+    <HeroUIProvider
+      locale='de-DE'
+      labelPlacement='outside'
+      validationBehavior='aria'
+    >
       <NextThemesProvider
         attribute='class'
         defaultTheme='system'

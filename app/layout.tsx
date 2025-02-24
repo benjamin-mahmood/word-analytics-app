@@ -4,8 +4,8 @@ import { Providers } from './providers'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: "Benjamin's Word Analytics App",
-  description: 'Einfache Analytic App mit HeroUI',
+  title: 'Social Media Checker',
+  description: 'Einfache Social Media Post Längen Checker App',
 }
 
 const outfit = Outfit({
