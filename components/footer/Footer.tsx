@@ -6,13 +6,13 @@ export default function Footer() {
         vorbehalten.
       </small>
 
-      <small>
+      {/* <small>
         Letzter Check:{' '}
         {new Date(Date.now()).toLocaleTimeString('de-DE', {
           hour: '2-digit',
           minute: '2-digit',
         })}
-      </small>
+      </small> */}
     </footer>
   )
 }

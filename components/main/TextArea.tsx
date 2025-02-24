@@ -2,11 +2,13 @@
 import { Textarea as TextareaHeroUI } from '@heroui/input'
 import { useState } from 'react'
 
-export default function TextArea() {
-  const [text, setText] = useState('')
-  const [error, setError] = useState('')
+interface TextAreaProps {
+  text: string
+  setText: (text: string) => void
+}
 
-  const numberOfCharacters = text.length
+export default function TextArea({ text, setText }: TextAreaProps) {
+  const [error, setError] = useState('')
 
   function handleChange(text: string) {
     // Check for script tags
@@ -47,7 +49,6 @@ export default function TextArea() {
         isInvalid={error.length > 0}
         errorMessage={error}
       />
-      {/* <p className='text-default-500 text-small'>Textarea value: {text}</p> */}
     </div>
   )
 }
