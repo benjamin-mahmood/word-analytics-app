@@ -27,7 +27,6 @@ export default function RootLayout({
       className={`${outfit.variable}`}
     >
       <body>
-        {' '}
         <Providers>{children}</Providers>
       </body>
     </html>
