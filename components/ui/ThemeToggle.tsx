@@ -54,7 +54,7 @@ export function ThemeToggle() {
 
   return (
     <Switch
-      size='lg'
+      size='sm'
       color='primary'
       thumbIcon={({ isSelected, className }) =>
         isSelected ? (

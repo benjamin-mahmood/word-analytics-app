@@ -1,10 +1,53 @@
+'use client'
 import { Textarea as TextareaHeroUI } from '@heroui/input'
+import { useState } from 'react'
 
 export default function TextArea() {
+  const [text, setText] = useState('')
+  const [error, setError] = useState('')
+
+  const numberOfCharacters = text.length
+
+  function handleChange(text: string) {
+    // Check for script tags
+    if (text.includes('<script>') || text.includes('</script>')) {
+      setError('Script Tags sind nicht erlaubt!')
+      text = text.replace(/<script>/g, '')
+      text = text.replace(/<\/script>/g, '')
+      return
+    }
+    // check for length
+    if (text.length > 3000) {
+      setError('Text darf nicht länger als 3000 Zeichen sein!')
+      return
+    }
+    setError('')
+    setText(text)
+  }
+
   return (
-    <TextareaHeroUI
-      label='Hier den Text deines Posts einfügen'
-      labelPlacement='inside'
-    />
+    <div>
+      <TextareaHeroUI
+        //styling
+        variant='bordered'
+        color='default'
+        radius='lg'
+        label='Post Text:'
+        placeholder='Hier den Text deines Posts einfügen'
+        labelPlacement='inside'
+        minRows={8}
+        size='lg'
+        //features
+        spellCheck='false'
+        isClearable
+        //value and change handler
+        value={text}
+        onValueChange={handleChange}
+        //validation
+        isInvalid={error.length > 0}
+        errorMessage={error}
+      />
+      {/* <p className='text-default-500 text-small'>Textarea value: {text}</p> */}
+    </div>
   )
 }

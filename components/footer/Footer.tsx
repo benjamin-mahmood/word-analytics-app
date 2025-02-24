@@ -5,6 +5,7 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} Benjamin Mahmood. Alle Rechte
         vorbehalten.
       </small>
+
       <small>
         Letzter Check:{' '}
         {new Date(Date.now()).toLocaleTimeString('de-DE', {
